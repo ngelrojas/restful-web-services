@@ -17,7 +17,7 @@ public class HelloWorldBean {
 
     @Override
     public String toString() {
-        return "HelloWorldBean{" +
+        return "HelloWorldBean {" +
                 "message='" + message + '\'' +
                 '}';
     }
