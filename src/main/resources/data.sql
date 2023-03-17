@@ -1,3 +1,11 @@
 insert into user_details(id,birth_date,name) values (1002, current_date(), 'Angel');
 insert into user_details(id,birth_date,name) values (1003, current_date(), 'Omar');
 insert into user_details(id,birth_date,name) values (1004, current_date(), 'Pamela');
+insert into post(id, description, user_id) values (1001, 'Hello World', 1002);
+insert into post(id, description, user_id) values (1005, 'Hello World', 1002);
+insert into post(id, description, user_id) values (1006, 'Hello World', 1003);
+insert into post(id, description, user_id) values (1007, 'Hello World', 1003);
+insert into post(id, description, user_id) values (1008, 'Hello World', 1003);
+insert into post(id, description, user_id) values (1009, 'Hello World', 1003);
+insert into post(id, description, user_id) values (1010, 'Hello World', 1004);
+insert into post(id, description, user_id) values (1011, 'Hello World', 1004);
