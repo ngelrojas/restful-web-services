@@ -1,6 +1,7 @@
 package com.rednodes.rest.webservices.restfulwebsevices.user;
 
 import com.rednodes.rest.webservices.restfulwebsevices.jpa.UserRepository;
+import com.rednodes.rest.webservices.restfulwebsevices.post.Post;
 import jakarta.validation.Valid;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
@@ -52,6 +53,15 @@ public class UserJpaResource {
     @DeleteMapping("/jpa/users/{id}")
     public void deleteUser(@PathVariable int id) {
         repository.deleteById(id);
+    }
+
+    @GetMapping("/jpa/users/{id}/posts")
+    public List<Post> retrievePostsForUser(@PathVariable int id) {
+        Optional<User> user = repository.findById(id);
+        if (user == null) {
+            throw new UserNotFoundException("id-" + id);
+        }
+        return user.get().getPosts();
     }
 
 }
