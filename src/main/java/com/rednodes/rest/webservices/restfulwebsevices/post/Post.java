@@ -2,6 +2,7 @@ package com.rednodes.rest.webservices.restfulwebsevices.post;
 
 import com.rednodes.rest.webservices.restfulwebsevices.user.User;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import net.minidev.json.annotate.JsonIgnore;
 
 @Entity
@@ -9,11 +10,20 @@ public class Post {
     @Id
     @GeneratedValue
     private Integer id;
-    private String description;
 
+    @Size(min = 10)
+    private String description;
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     private User user;
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Integer getId() {
         return id;
     }
